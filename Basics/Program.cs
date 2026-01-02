@@ -2,8 +2,11 @@
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Linq;
+
+
 public class Program
 {
+    public delegate void Notify(string message);
     static void Main(string[] args)
     {
         //PremiumLibraryMember member = new PremiumLibraryMember("Alice Smith", 30);
@@ -13,9 +16,13 @@ public class Program
 
         //xmlData();
 
-        Person.personMain();
-    }
+        //Person.personMain();
 
+        //GradingSystem.GradeMain();
+
+        Notify notifier = (msg) => Console.WriteLine($"Lambda says: {msg}");
+        notifier("Hello from delegate!");
+    }
 
     public static void xmlData()
     {
