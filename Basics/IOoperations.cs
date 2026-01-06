@@ -47,7 +47,6 @@ namespace IOoperations
                 string? transactionType = parts[0]?.Trim();
                 if (double.TryParse(parts[1].Trim(), out double amount))
                 {
-                    // Update the balance based on transaction type
                     if (transactionType?.ToUpper() is "DEPOSIT")
                         currentBalance += amount;
                     else if (transactionType?.ToUpper() is "WITHDRAWAL")
