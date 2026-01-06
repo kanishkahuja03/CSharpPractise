@@ -4,27 +4,9 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Linq;
 
 
-public class Program
+public class XMLFileInteraction
 {
-    public delegate void Notify(string message);
     static void Main(string[] args)
-    {
-        //PremiumLibraryMember member = new PremiumLibraryMember("Alice Smith", 30);
-        //member.DisplayMembershipDetails();
-
-        //Car.carMenu();
-
-        //xmlData();
-
-        //Person.personMain();
-
-        //GradingSystem.GradeMain();
-
-        Notify notifier = (msg) => Console.WriteLine($"Lambda says: {msg}");
-        notifier("Hello from delegate!");
-    }
-
-    public static void xmlData()
     {
         string inputFilePath = "input.xml";
         string outputFilePath = "output.xml";

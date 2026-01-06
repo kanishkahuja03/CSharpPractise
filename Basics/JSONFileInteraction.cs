@@ -6,14 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Basics
+namespace JSONFileInteraction
 {
     public class Person
     {
         public string Name { get; set; }
         public int Age { get; set; }
+    }
 
-        public static void personMain()
+    public class Program
+    {
+        public static void Main()
         {
             var jsonData = new Person { Name = "John", Age = 30 };
             File.WriteAllText("data.json", JsonConvert.SerializeObject(jsonData));
@@ -25,12 +28,12 @@ namespace Basics
             var xmlData = new Person { Name = "Jane", Age = 25 };
             var xmlSerializer = new XmlSerializer(xmlData.GetType());
 
-            using(var writer = new StreamWriter("data.xml"))
+            using (var writer = new StreamWriter("data.xml"))
             {
                 xmlSerializer.Serialize(writer, xmlData);
             }
 
-            using(var reader = new StreamReader("data.xml"))
+            using (var reader = new StreamReader("data.xml"))
             {
                 var xmlObj = xmlSerializer.Deserialize(reader) as Person; // as is used for safe type casting
                 Console.WriteLine($"XML Data: Name={xmlObj.Name}, Age={xmlObj.Age}");

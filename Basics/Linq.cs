@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Basics
+namespace Linq
 {
     public class Car
     {
@@ -14,15 +14,36 @@ namespace Basics
         public string Color { get; set; }
         public override string ToString() => $"{Year} {Make} {Model} - Color: {Color}";
 
-        public static void carMenu()
+        public static void ListAllCars(List<Car> cars)
+        {
+            Console.WriteLine("\nAll Cars:");
+            cars.ForEach(Console.WriteLine);
+        }
+        public static void SearchCars(List<Car> cars)
+        {
+            Console.Write("Enter car make: ");
+            string? make = Console.ReadLine();
+            Console.Write("Enter car model: ");
+            string? model = Console.ReadLine();
+            var matchingCars = cars.Where(c =>
+                c.Make.Equals(make, StringComparison.OrdinalIgnoreCase)
+                && c.Model.Equals(model, StringComparison.OrdinalIgnoreCase)).ToList();
+            Console.WriteLine(matchingCars.Any()
+            ? "\nMatching Cars:\n" + string.Join("\n", matchingCars)
+            : "No matching cars found.");
+        }
+    }
+    public class Program
+    {
+        public static void Main()
         {
             List<Car> cars = new List<Car>
-        {
-            new Car { Model = "Accord", Make = "Honda", Year = 2020, Color = "Red" },
-            new Car { Model = "Civic", Make = "Honda", Year = 2019, Color = "Blue" },
-            new Car { Model = "Corolla", Make = "Toyota", Year = 2021, Color = "Black" },
-            new Car { Model = "Camry", Make = "Toyota", Year = 2022, Color = "White" },
-        };
+            {
+                new Car { Model = "Accord", Make = "Honda", Year = 2020, Color = "Red" },
+                new Car { Model = "Civic", Make = "Honda", Year = 2019, Color = "Blue" },
+                new Car { Model = "Corolla", Make = "Toyota", Year = 2021, Color = "Black" },
+                new Car { Model = "Camry", Make = "Toyota", Year = 2022, Color = "White" },
+            };
 
             Console.WriteLine("Car Information System");
 
@@ -37,10 +58,10 @@ namespace Basics
                     switch (choice)
                     {
                         case 1:
-                            ListAllCars(cars);
+                            Car.ListAllCars(cars);
                             break;
                         case 2:
-                            SearchCars(cars);
+                            Car.SearchCars(cars);
                             break;
                         case 3:
                             Console.WriteLine("Exiting the program. Goodbye!");
@@ -56,24 +77,5 @@ namespace Basics
                 }
             }
         }
-
-        static void ListAllCars(List<Car> cars)
-        {
-            Console.WriteLine("\nAll Cars:");
-            cars.ForEach(Console.WriteLine);
-        }
-        static void SearchCars(List<Car> cars)
-        {
-            Console.Write("Enter car make: ");
-            string make = Console.ReadLine();
-            Console.Write("Enter car model: ");
-            string model = Console.ReadLine();
-            var matchingCars = cars.Where(c =>
-            c.Make.Equals(make, StringComparison.OrdinalIgnoreCase)
-            && c.Model.Equals(model, StringComparison.OrdinalIgnoreCase)).ToList();
-            Console.WriteLine(matchingCars.Any()
-            ? "\nMatching Cars:\n" + string.Join("\n", matchingCars)
-            : "No matching cars found.");
-        }
     }
-};
+}

@@ -43,7 +43,7 @@ namespace Basics
                     return (Grade.F, "Enter valid grade");
             }
         }
-        public static void GradeMain()
+        public static void Main()
         {
             Console.WriteLine(GradeMsg(Grade.E));
         }
