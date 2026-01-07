@@ -6,7 +6,7 @@
 	  <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>DelegatesAndEvents.Program</StartupObject>
+    <StartupObject>Threads.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
