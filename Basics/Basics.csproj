@@ -6,7 +6,7 @@
 	  <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>Threads.Program</StartupObject>
+    <StartupObject>Lambda.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
