@@ -6,7 +6,7 @@
 	  <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>StackPractise.Program</StartupObject>
+    <StartupObject>AdvancedOOPS.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

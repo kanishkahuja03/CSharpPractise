@@ -26,8 +26,8 @@ namespace StackPractise
         // Perform a new action
         public void PerformAction(EditorAction action)
         {
-            undoStack.Push(action);     // Push to undo
-            redoStack.Clear();          // Clear redo history
+            undoStack.Push(action);
+            redoStack.Clear();
 
             Console.WriteLine("Action performed:");
             Console.WriteLine(action);
