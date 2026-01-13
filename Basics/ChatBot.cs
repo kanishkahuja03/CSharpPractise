@@ -28,9 +28,6 @@ namespace DictionaryChatBot
         // Responses
         private Dictionary<string, List<string>> _responses;
 
-        // Learned phrases
-        private Dictionary<string, string> _learnedKnowledge;
-
         // Session memory
         private BotMemory _memory;
 
@@ -102,8 +99,8 @@ namespace DictionaryChatBot
             input = input.ToLower();
 
             // Learned knowledge has priority
-            if (_learnedKnowledge.ContainsKey(input))
-                return _learnedKnowledge[input];
+            if (_memory.LearnedKnowledge.ContainsKey(input))
+                return _memory.LearnedKnowledge[input];
 
             string bestIntent = DetectIntent(input);
 
@@ -154,7 +151,7 @@ namespace DictionaryChatBot
             Console.Write("What is the correct answer? ");
             string answer = Console.ReadLine();
 
-            _learnedKnowledge[question] = answer;
+            _memory.LearnedKnowledge[question] = answer;
 
             Console.WriteLine("I learned something new!");
         }
@@ -163,7 +160,7 @@ namespace DictionaryChatBot
         private void ShowStats()
         {
             Console.WriteLine("BOT MEMORY");
-            Console.WriteLine($"Learned phrases: {_learnedKnowledge.Count}");
+            Console.WriteLine($"Learned phrases: {_memory.LearnedKnowledge.Count}");
             Console.WriteLine($"Last intent: {_memory.LastIntent}");
         }
 
@@ -207,7 +204,7 @@ namespace DictionaryChatBot
                 }
             };
 
-            _learnedKnowledge = new Dictionary<string, string>();
+            _memory.LearnedKnowledge = new Dictionary<string, string>();
         }
     }
 
@@ -215,6 +212,7 @@ namespace DictionaryChatBot
     class BotMemory
     {
         public string LastIntent { get; set; } = "none";
+        public Dictionary<string, string> LearnedKnowledge;
     }
 }
 
