@@ -31,7 +31,7 @@ namespace WarehouseOrderProcessing
 
         //PAYMENT GATEWAY (MUTEX)
         static readonly Mutex _paymentMutex =
-            new Mutex(false, "Global\\PAYMENT_GATEWAY_MUTEX");
+            new Mutex(false, "PAYMENT_GATEWAY_MUTEX");
 
         //DATABASE CONNECTIONS (SEMAPHORE)
         static readonly Semaphore _dbSemaphore = new Semaphore(3, 3);

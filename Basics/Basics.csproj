@@ -6,7 +6,7 @@
 	  <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>DictionaryChatBot.Program</StartupObject>
+    <StartupObject>Builder.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
