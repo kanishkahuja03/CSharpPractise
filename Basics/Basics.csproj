@@ -6,7 +6,7 @@
 	  <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>Builder.Program</StartupObject>
+    <StartupObject>Observer.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
