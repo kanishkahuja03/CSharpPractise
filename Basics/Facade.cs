@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Facade
 {
+    // Multiple subsystem classes
     public class InventoryService
     {
         public bool CheckStock(string productId)
@@ -39,6 +40,7 @@ namespace Facade
         }
     }
 
+    //Main facade class
     public class OrderFacade
     {
         private readonly InventoryService _inventory;

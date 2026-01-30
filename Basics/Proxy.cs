@@ -61,7 +61,7 @@ namespace Proxy
             Console.WriteLine("Image object created");
             Console.WriteLine("Now displaying image");
 
-            image.Display();
+            // Image object is made when display is called
             image.Display();
         }
     }
