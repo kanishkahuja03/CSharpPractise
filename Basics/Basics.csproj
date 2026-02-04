@@ -6,7 +6,7 @@
 	  <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>Proxy.Program</StartupObject>
+    <StartupObject>ModernPatterns.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
