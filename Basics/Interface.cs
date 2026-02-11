@@ -48,8 +48,8 @@ namespace InterfaceExample
 
             List<IShape> shapes = new List<IShape>
             {
-                new Circle(5),
-                new Rectangle(4, 6)
+                new Circle(6),
+                new Rectangle(5, 5)
             };
 
             foreach (var shape in shapes)
