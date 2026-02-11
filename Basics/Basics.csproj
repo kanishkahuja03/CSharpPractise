@@ -6,7 +6,7 @@
 	  <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>ModernPatterns.Program</StartupObject>
+    <StartupObject>InterfaceExample.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
