@@ -17,7 +17,7 @@ namespace Adapter
     {
         public void MakePayment(int amountInRupees)
         {
-            Console.WriteLine($"Not Paid Rs{amountInRupees} using legacy gateway");
+            Console.WriteLine($"Not Yet Paid Rs{amountInRupees} using legacy gateway");
         }
     }
 
