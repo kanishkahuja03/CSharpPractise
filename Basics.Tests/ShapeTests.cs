@@ -10,8 +10,8 @@ namespace Basics.Tests
         {
             // Arrange
             double radius = 10;
-            //double expectedArea = Math.PI * 100;
-            double expectedArea = 3.14 * 100;
+            double expectedArea = Math.PI * 100;
+            //double expectedArea = 3.14 * 100;
             IShape circle = new Circle(radius);
 
             // Act
